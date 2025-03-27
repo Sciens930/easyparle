@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Demo for Dentist</title>
+    <link rel="stylesheet" href="./dentist.css">
+    <link rel="shortcut icon" href="./Images/easy_parle.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="flex items-center">
+                <a href="./index.html"><img src="./Images/easy1.jpg" alt="Logo" class="logo"></a>
+                <!-- <img src="./Images/easy_parle.png" alt="Logo" class="logo"> -->
+                <!-- <h1 class="text-2xl" style="color: #6366F1;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: x-large;"> EasyParle</h1> -->
+              </div>
+            <a href="./index.html" class="return-link"><button>Return to Easy Parle</button></a>
+        </header>
+        <h1>AI Chatbot Demo for Dentist</h1>
+        <p style="color: red;padding: 15px; text-align: center;">NOTE : For your security, please do not enter personal data into the chatbot, as it will be reflected in the live Google sheet.</p>
+        <!-- <div class="content">
+            <div class="image-section">
+                <img src="./Dentist.jpg" alt="AI Dentist Interface">
+            </div>
+            <div class="chatbot-section" id="chat_form">
+                <script src="https://app.easyparle.com/js/chat_form_plugin.js" data-bot-id="47196"></script>
+            </div> -->
+            <div class="content">
+                <div class="video-section">
+                    <video controls class="responsive-video" height="380px" width="250px" style="border-radius: 15px;" autoplay>
+                        <source src="./Images/WhatsApp Video 2025-03-20 at 6.07.37 PM.mp4" type="video/mp4">
+                        <!-- <source src="./Images/WhatsApp Video 2025-03-20 at 5.45.58 PM.mp4" type="video/mp4"> -->
+                    </video>
+                </div>
+                <div class="chatbot-section" id="chat_form">
+                    <script src="https://app.easyparle.com/js/chat_form_plugin.js" data-bot-id="47196"></script>
+                </div>
+            </div>
+            
+        </div> <br><br><br>
+        
+        <section class="data-video-section">
+            <div class="data-container">
+                <h2>Live Google Sheet Data (Conversation reflect after a minute)</h2>
+                <p style="color: red;padding: 15px;text-align: center;">NOTE : A data erase is anticipated within the next week.</p>
+                <table id="data-table">
+                    <thead>
+                        <tr id="table-head"></tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+            <!-- <p style="color: red;padding: 15px;padding-left: 2px;">NOTE : A data modification is anticipated within the next week.</p> -->
+        
+            <!-- <div class="video-container">
+                <iframe 
+                    src="./Images/WhatsApp Video 2025-03-20 at 5.45.58 PM.mp4" 
+                    frameborder="0" 
+                    allow="encrypted-media" 
+                    allowfullscreen>
+                </iframe>
+            </div> -->
+        </section>
+        
+              
+</div>
+<script>
+    // Live  Google Sheet Data
+    const sheetUrl = "https://docs.google.com/spreadsheets/d/1tVE4AOPabJiTNsMJVWHOwu7xtyGXEFZR6vN0ZewPVdg/gviz/tq?tqx=out:json";
+
+    async function fetchData() {
+        const response = await fetch(sheetUrl);
+        const text = await response.text();
+        const json = JSON.parse(text.substring(47, text.length - 2)); // Remove extra characters
+        const rows = json.table.rows;
+
+        const tableHead = document.getElementById("table-head");
+        const tableBody = document.getElementById("table-body");
+
+        tableHead.innerHTML = ""; 
+        tableBody.innerHTML = "";
+
+        // Set table headers
+        tableHead.innerHTML = `<tr>${json.table.cols.map(col => `<th>${col.label}</th>`).join("")}</tr>`;
+
+        // Set table rows
+        rows.forEach(row => {
+            tableBody.innerHTML += `<tr>${row.c.map(cell => `<td>${cell?.v || ""}</td>`).join("")}</tr>`;
+        });
+    }
+
+    fetchData();
+    setInterval(fetchData, 5000); // Refresh every 5 seconds for live updates
+</script>
+</body>
+</html>

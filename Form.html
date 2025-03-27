@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Parle</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <link rel="shortcut icon" href="./Images/easy_parle.png" type="image/x-icon">
+    <link rel="stylesheet" href="./form.css">
+</head>
+<body>
+    <a href="./index.html"><img src="./Images/easy1.jpg" alt="Web-logo" class="logo"></a>
+    <div class="container">
+        <h2>We'd Love to Connect! Please Share Your Details with Us</h2>
+        <form id="clientForm">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="contactNumber">Contact Number</label>
+            <input type="text" id="contactNumber" name="contactNumber" required>
+
+            <label for="businessName">Business Name</label>
+            <input type="text" id="businessName" name="businessName" required>
+
+            <label for="businessEmail">Business Email</label>
+            <input type="email" id="businessEmail" name="businessEmail" required>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="province">Province</label>
+            <input type="text" id="province" name="province" required>
+
+            <div class="terms">
+                <input type="checkbox" id="termsCheckbox" required>
+                <label for="termsCheckbox">I agree to the <a href="./Terms and conditions.pdf" target="_blank">Terms and Conditions</a></label>
+            </div>
+
+            <button type="submit" id="submitBtn">Submit</button>
+            <p id="successMessage">Details submitted successfully! Redirecting...</p>
+        </form>
+    </div>
+    <div id="popupModal" class="modal">
+        <div class="modal-content">
+            <p>✅ Thank you for scheduling your appointment. Our team will contact you shortly.</p>
+            <button id="closePopup">OK</button>
+        </div>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>

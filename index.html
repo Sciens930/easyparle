@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EasyParle - AI Assistant for Chatbots</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="shortcut icon" href="./Images/easy_parle.png" type="image/x-icon">
+  <link rel="stylesheet" href="./style1.css">
+</head>
+<body class="font-sans text-gray-800">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center">
+        <a href="./index.html"><img src="./Images/easy1.jpg" alt="Logo" class="logo"></a>
+      </div>
+      <div class="hidden md:flex space-x-8">
+        <a href="#benefits" class="text-gray-700 hover:text-indigo-600 transition">Benefits</a>
+        <a href="#features" class="text-gray-700 hover:text-indigo-600 transition">Features</a>
+        <a href="#pricing" class="text-gray-700 hover:text-indigo-600 transition">Pricing</a>
+        <a href="#demo" class="text-gray-700 hover:text-indigo-600 transition">Demo</a>
+      </div>
+      <div>
+        <a href="#demo" 
+   class="bg-[#D97706] text-white text-lg font-bold px-6 py-3 rounded-full 
+          hover:bg-[#b86205] transition-all duration-300 ease-in-out 
+          transform hover:scale-105 active:scale-95 
+          block text-center md:inline-block md:text-base md:px-5 md:py-2 sm:w-full hover-grow">
+   Schedule an appointment
+</a>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="gradient-bg py-16 text-white">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4" style="line-height: 65px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);">Unlock the Power of AI for Your Dental Practice</h1> <br>
+        <p class="text-xl mb-8" style="line-height:35px;font-size: 22px; padding-right: 3px;" ><b>Automated 24/7 appointment booking</b>: Let EasyParle handle appointment scheduling around the clock, freeing up your staff and improving patient access.</p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <a href="./dentist.html" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold text-center hover:bg-gray-100 transition" style="background-color: #FFF; color:#1E1E1E;">Chat With Our Bot</a>
+          <a href="#features" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold text-center hover:bg-white hover:text-indigo-600 transition">Discover More</a>
+        </div>
+      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <img src="./Images/chatbot pic.png" alt="EasyParle AI chatbot interface" class="rounded-lg shadow-2xl h-auto max-w-full sm:h-64 md:h-80 lg:h-96 xl:h-[400px] object-cover transition duration-300 hover:scale-105">
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Benefits Section -->
+  <section id="benefits" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">Key Benefits for Your Dental Practice</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Transform your front desk operations and patient experience with our AI-powered assistant.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Benefit 1 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg hover-grow">
+          <div class="text-indigo-600 text-4xl mb-4">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Reduce Front Desk Workload</h3>
+          <p class="text-gray-600">EasyParle handles repetitive tasks like answering FAQs and scheduling appointments. Fewer phone interruptions mean your staff can devote more attention to patients in the office.</p>
+        </div>
+        
+        <!-- Benefit 2 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg hover-grow">
+          <div class="text-indigo-600 text-4xl mb-4">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">24/7 Patient Interaction</h3>
+          <p class="text-gray-600">Never miss a call or question again! EasyParle keeps your patients engaged through your website or chat, even after hours and on weekends. Whether it’s 2 AM or midday, nervous patients can get the answers they need—right when they need them</p>
+        </div>
+        
+        <!-- Benefit 3 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg hover-grow">
+          <div class="text-indigo-600 text-4xl mb-4">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Minimize No-Shows</h3>
+          <p class="text-gray-600">The chatbot sends gentle appointment reminders, reducing no-shows by over 20%. Just one no-show per day can cost a practice $20,000–$70,000 a year.</p>
+        </div>
+        
+        <!-- Benefit 4 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg hover-grow">
+          <div class="text-indigo-600 text-4xl mb-4">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Streamline Appointment Booking</h3>
+          <p class="text-gray-600">EasyParle integrates with your Google Calendar to let patients self-schedule appointments in real time. No phone tag, no double-booking.</p>
+        </div>
+        
+        <!-- Benefit 5 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg hover-grow">
+          <div class="text-indigo-600 text-4xl mb-4">
+            <i class="fas fa-smile"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Improve Patient Experience</h3>
+          <p class="text-gray-600">Today's patients expect convenience. Practices using AI assistants have seen patient satisfaction scores rise by 35%.</p>
+        </div>
+        
+        <!-- Benefit 6 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg hover-grow">
+          <div class="text-indigo-600 text-4xl mb-4">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Boost Practice Efficiency</h3>
+          <p class="text-gray-600">With EasyParle handling front-line interactions, clinics have seen up to a 30% increase in patient bookings as more inquiries convert to appointments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- GIF Video Section -->
+<section class="py-16 gradient-bg text-white text-white flex justify-center items-center">
+  <div class="w-full md:w-1/2 flex flex-col items-center">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center whitespace-nowrap" style="padding: 35px;">Experience Human-like Conversations with EasyParle</h2>
+    <img 
+      src="./Images/GIF-Supademo.gif" 
+      alt="EasyParle AI chatbot interface" 
+      class="rounded-lg shadow-2xl max-w-full h-auto sm:h-64 md:h-80 lg:h-96 xl:h-[400px] object-cover transition duration-300 hover:scale-105"
+    >
+  </div>
+</section>
+
+
+  <!-- Features Section -->
+  <section id="features" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">Features & Integrations</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">EasyParle seamlessly integrates with your existing systems</p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div>
+          <div class="mb-12">
+            <div class="flex items-start mb-4">
+              <div class="bg-indigo-600 p-3 rounded-full text-white mr-4" style="background-color: #333333;">
+                <i class="fas fa-robot text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">AI-Powered Chatbot Engine</h3>
+                <p class="text-gray-600">Understands and responds to common patient questions in natural language. From treatment inquiries to pricing and insurance info, EasyParle provides on-the-spot answers.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-12">
+            <div class="flex items-start mb-4">
+              <div class="bg-indigo-600 p-3 rounded-full text-white mr-4" style="background-color: #333333;">
+                <i class="fas fa-calendar text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Appointment Scheduling Assistant</h3>
+                <p class="text-gray-600">Patients can book appointments directly through the chat. EasyParle connects to your Google Calendar to offer available time slots and instantly add confirmed bookings.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-12">
+            <div class="flex items-start mb-4">
+              <div class="bg-indigo-600 p-3 rounded-full text-white mr-4" style="background-color: #333333;">
+                <i class="fas fa-bell text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Automated Reminders & Follow-ups</h3>
+                <p class="text-gray-600">EasyParle works with your Google Mail to send personalized confirmation emails and reminder messages, significantly reducing no-show rates.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="mb-12">
+            <div class="flex items-start mb-4">
+              <div class="bg-indigo-600 p-3 rounded-full text-white mr-4" style="background-color: #333333;">
+                <i class="fas fa-table text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Data Logging to Google Sheets</h3>
+                <p class="text-gray-600">Every inquiry or appointment can be logged. EasyParle can populate a Google Sheet with new patient contact details, appointment requests, or daily inquiry summaries.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-12">
+            <div class="flex items-start mb-4">
+              <div class="bg-indigo-600 p-3 rounded-full text-white mr-4" style="background-color: #333333;">
+                <i class="fas fa-exchange-alt text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Seamless Handoff to Staff</h3>
+                <p class="text-gray-600">If the bot encounters a question it can't answer or a situation needing a human touch, it can flag a staff member or collect the caller's info for a callback.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-12">
+            <div class="flex items-start mb-4">
+              <div class="bg-indigo-600 p-3 rounded-full text-white mr-4" style="background-color: #333333;">
+                <i class="fas fa-shield-alt text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Secure and HIPAA-Conscious</h3>
+                <p class="text-gray-600">Designed with patient privacy in mind, EasyParle can be configured to handle personal health information appropriately. Conversations are encrypted.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">Before and Beyond</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Transform your clinic with our AI receptionist</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Before -->
+        <div class="bg-gray-50 p-8 rounded-lg shadow hover-grow">
+          <h3 class="text-2xl font-bold mb-4 text-gray-600" style="color: #333333;">Before EasyParle</h3>
+          <ul class="space-y-4 text-gray-600">
+            <li class="flex items-start">
+              <i class="fas fa-times text-red-500 mt-1 mr-3" style="color: #333333;"></i>
+              <span>The phone rings off the hook with appointment calls, insurance questions, and reschedule requests</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-times text-red-500 mt-1 mr-3" style="color: #333333;" ></i>
+              <span>Staff spend hours daily on repetitive emails and voicemails</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-times text-red-500 mt-1 mr-3" style="color: #333333;" ></i>
+              <span>After 5 PM and on weekends, patient inquiries go to voicemail</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-times text-red-500 mt-1 mr-3" style="color: #333333;"></i>
+              <span>Many patients don't leave messages, some find another dentist</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-times text-red-500 mt-1 mr-3" style="color: #333333;"></i>
+              <span>Staff arrives Monday to a full inbox and maybe a couple of no-shows</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-times text-red-500 mt-1 mr-3" style="color: #333333;"></i>
+              <span>Hard to follow up with everyone, some patients slip through the cracks</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- After -->
+        <div class="bg-indigo-50 p-8 rounded-lg shadow hover-grow">
+          <h3 class="text-2xl font-bold mb-4 text-indigo-600" style="color: #D97706;">After EasyParle</h3>
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+              <span>EasyParle fields routine calls and chats, 24/7</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+              <span>New patients get instant answers about services and book appointments even at 9 PM</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+              <span>New appointment requests are automatically added to your schedule</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+              <span>Patients receive automatic reminders before visits and can confirm with one click</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+              <span>Staff sees a neatly organized email report of after-hours activity</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+              <span>No backlog, no missed opportunities – your practice runs smoother than ever</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold mb-4">Inaugural Promotion & Pricing</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Get started with our special early-adopter pricing</p>
+      </div>
+      <!-- Toggle Switch -->
+      <div class="flex justify-center items-center gap-3 mb-8">
+        <span id="yearly-label" class="text-gray-600 font-bold">Yearly</span>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" id="toggleSwitch" class="sr-only peer">
+          <div class="w-12 h-6 bg-gray-300 rounded-full peer-checked:bg-gray-600 transition-all"></div>
+          <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow transition-transform peer-checked:translate-x-6"></div>
+        </label>
+        <span id="monthly-label" class="text-gray-600">Monthly</span>
+      </div>
+  
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Early Bird Pricing -->
+          <div class="bg-white rounded-2xl shadow-xl overflow-hidden h-full flex flex-col">
+            <div id="card1" class="p-8 text-white text-center transition-all grey-card" style="background-color:#333333">
+              <h3 class="text-2xl font-bold mb-2">Limited-Time Early Bird Pricing</h3>
+              <p class="text-lg mb-4" id="message">Lock in this lower rate for the first 12 months</p>
+              <div class="flex justify-center items-baseline">
+                <span class="text-5xl font-bold">$<span id="early-bird-price">999</span></span>
+                <span class="text-xl ml-2" id="early-bird-duration">/month</span>
+              </div>
+              <p class="mt-2 text-indigo-200"><s id="early-bird-regular-price">$999/yearly regular price</s></p>
+              <p>For First 100 customers only</p>
+            </div>
+  
+            <div class="p-8 flex-grow">
+              <ul class="space-y-4">
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-xl"></i> All-inclusive features with no hidden fees</li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-xl"></i> Unlimited chats and appointments</li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-xl"></i> All Google integrations (Mail/Sheets/Calendar)</li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-xl"></i> 30-day free trial</li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-xl"></i> Free white-glove setup and training (a $500 value)</li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-xl"></i> No long-term contract required</li>
+              </ul>
+            </div>
+  
+            <div class="p-8 mt-auto text-center">
+              <a href="Form.html?action=buy-plan&plan=monthly" id="buyPlanLink" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition hover-grow" style="background-color: #333333;">
+                <button id="buyPlanBtn" data-action="buy-plan">Buy Plan</button>
+              </a>
+            </div>
+          </div>
+  
+          <!-- Premium Tier -->
+          <div class="bg-white rounded-2xl shadow-xl overflow-hidden h-full flex flex-col">
+            <div id="card2" class="p-8 text-white text-center transition-all orange-card" style="background-color: #D97706;">
+              <h3 class="text-2xl font-bold mb-2">Enterprise Premium</h3>
+              <p class="text-lg mb-4">Advanced features for multi-location practices</p>
+              <span class="text-4xl font-bold" style="color: #333333;">For pricing please contact us.</span>
+              <h3 class="mt-2 text-purple-200">Full-featured solution</h3>
+            </div>
+  
+            <div class="p-8 flex-grow">
+              <ul class="space-y-4">
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-xl"></i> Everything in Early Bird package</li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-xl"></i> Multi-location support</li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-xl"></i> Advanced analytics dashboard</li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-xl"></i> Custom training for practice procedures</li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-xl"></i> Priority support with dedicated account manager</li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-xl"></i> Patient satisfaction surveys & follow-ups</li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-xl"></i> Maintenance with 10-member expert team.</li>
+              </ul>
+            </div>
+  
+            <div class="p-8 mt-auto text-center">
+              <a href="Form.html?action=appointment&type=book" target="_blank" class="inline-block bg-purple-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-900 transition hover-grow" style="background-color: #D97706;">
+                <button id="appointmentBtn" data-action="appointment">Book Appointment</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+  <!-- Demo CTA Section -->
+  <section id="demo" class="py-16 gradient-bg text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to See EasyParle in Action?</h2>
+      <p class="text-xl mb-8 max-w-3xl mx-auto">Experience EasyParle for yourself. Book a live demo where you can watch our AI chatbot handle real-world patient scenarios and see how easily it plugs into your workflow.</p>
+      <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-8">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Request a Meet</h3>
+        <p class="text-gray-700 mb-4">
+            Click the button below to fill out the Meet request form.
+        </p>
+        <a href="Form.html?action=appointment&type=schedule" target="_blank">
+          <button class="w-full bg-indigo-500 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition hover-grow" id="scheduleAppointmentBtn" style="background-color:  #D97706;">Schedule an appointment</button>
+        </a>
+      </div>
+    </div>
+  </section>
+  <div class="text-center" >
+    <a class="btn mx-auto btn1" href="./dentist.html" role="button"><i class="bi bi-person-fill" ></i>Chat with our Bot</a>
+  </div>
+  <aside>
+    <script src="https://app.easyparle.com/js/chat_plugin.js" data-bot-id="47357"></script>
+  </aside>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
+
+
+
+
+

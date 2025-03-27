@@ -1,0 +1,287 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+/* Container for the entire page */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    height: 50px; /* Adjust based on your logo size */
+}
+
+.return-link {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+}
+.items-center img{
+    width: 180px;
+}
+/* Main title */
+h1 {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 24px;
+    width: 100%;
+}
+
+/* Content layout */
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Image section */
+.image-section img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Chatbot section */
+.chatbot-section {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* .chatbot-header {
+    display: flex;
+    align-items: center;
+    background-color: #ff8c00; Orange color from the screenshot
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.chatbot-header img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.chatbot-header span {
+    flex: 1;
+}
+
+.refresh-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.chat-messages {
+    margin-bottom: 20px;
+}
+
+.chat-messages p {
+    margin-bottom: 10px;
+    color: #333;
+} */
+
+.service-btn, .day-buttons button {
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 0;
+    display: block;
+    width: 100%;
+    font-size: 14px;
+}
+
+.day-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.day-buttons button {
+    flex: 1;
+    min-width: 60px;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chatbot-notification {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff8c00;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chatbot-notification img {
+    height: 20px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet devices (768px and up) */
+@media screen and (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-section, .chatbot-section {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .chatbot-section {
+        margin-top: 20px;
+    }
+}
+
+/* Mobile devices (480px and below) */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .image-section img {
+        max-width: 100%;
+    }
+
+    .day-buttons {
+        flex-direction: column;
+    }
+
+    .day-buttons button {
+        min-width: 100%;
+    }
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 5px;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+    th, td {
+        padding: 5px;
+    }
+}
+
+
+/* return to easy parle button */
+
+.return-link button {
+    background: linear-gradient(135deg, #F3921D, #D97706); /* Orange gradient */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  
+  /* Hover effect */
+  .return-link button:hover {
+    background: linear-gradient(135deg, #D97706, #F3921D);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Active effect */
+  .return-link button:active {
+    transform: scale(0.98);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .return-link button {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .return-link button {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  
+h2{
+    /* border: 2px solid; */
+    padding: 5px;
+    text-align: center;
+    color: #D97706;
+    font-size:xx-large;
+}
+
