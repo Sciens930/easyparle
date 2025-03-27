@@ -66,32 +66,49 @@
               
 </div>
 <script>
-    // Live  Google Sheet Data
-    const sheetUrl = "https://docs.google.com/spreadsheets/d/1tVE4AOPabJiTNsMJVWHOwu7xtyGXEFZR6vN0ZewPVdg/gviz/tq?tqx=out:json";
+     // Live Google Sheet Data
+const sheetUrl = "https://docs.google.com/spreadsheets/d/1tVE4AOPabJiTNsMJVWHOwu7xtyGXEFZR6vN0ZewPVdg/gviz/tq?tqx=out:json";
 
-    async function fetchData() {
-        const response = await fetch(sheetUrl);
-        const text = await response.text();
-        const json = JSON.parse(text.substring(47, text.length - 2)); // Remove extra characters
-        const rows = json.table.rows;
+async function fetchData() {
+    const response = await fetch(sheetUrl);
+    const text = await response.text();
+    const json = JSON.parse(text.substring(47, text.length - 2)); // Remove extra characters
+    const rows = json.table.rows;
 
-        const tableHead = document.getElementById("table-head");
-        const tableBody = document.getElementById("table-body");
+    const tableHead = document.getElementById("table-head");
+    const tableBody = document.getElementById("table-body");
 
-        tableHead.innerHTML = ""; 
-        tableBody.innerHTML = "";
+    tableHead.innerHTML = ""; 
+    tableBody.innerHTML = "";
 
-        // Set table headers
-        tableHead.innerHTML = `<tr>${json.table.cols.map(col => `<th>${col.label}</th>`).join("")}</tr>`;
+    // Set table headers
+    tableHead.innerHTML = `<tr>${json.table.cols.map(col => `<th>${col.label}</th>`).join("")}</tr>`;
 
-        // Set table rows
-        rows.forEach(row => {
-            tableBody.innerHTML += `<tr>${row.c.map(cell => `<td>${cell?.v || ""}</td>`).join("")}</tr>`;
-        });
-    }
+    // Set table rows with formatted date
+    rows.forEach(row => {
+        const formattedRow = row.c.map(cell => {
+            let cellValue = cell?.v || "";
+            
+            // Check if the cell value is a Date string like "Date(2025,2,26,7,16,8)"
+            if (typeof cellValue === "string" && cellValue.startsWith("Date(")) {
+                // Extract the numbers from the Date string
+                const dateParts = cellValue.match(/\d+/g); // Extract all numbers
+                if (dateParts && dateParts.length >= 3) {
+                    const year = parseInt(dateParts[0]);
+                    const month = parseInt(dateParts[1]) + 1; // JavaScript months are 0-based, so add 1
+                    const day = parseInt(dateParts[2]);
+                    // Format the date as DD/MM/YYYY
+                    cellValue = `${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year}`;
+                }
+            }
+            return `<td>${cellValue}</td>`;
+        }).join("");
+        tableBody.innerHTML += `<tr>${formattedRow}</tr>`;
+    });
+}
 
-    fetchData();
-    setInterval(fetchData, 5000); // Refresh every 5 seconds for live updates
+fetchData();
+setInterval(fetchData, 5000); // Refresh every 5 seconds for live updates
 </script>
 </body>
 </html>
