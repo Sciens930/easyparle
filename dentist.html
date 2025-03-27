@@ -4,111 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Chatbot Demo for Dentist</title>
-    <link rel="stylesheet" href="./dentist.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" href="./Images/easy_parle.png" type="image/x-icon">
 </head>
-<body>
-    <div class="container">
-        <header>
-            <div class="flex items-center">
-                <a href="./index.html"><img src="./Images/easy1.jpg" alt="Logo" class="logo"></a>
-                <!-- <img src="./Images/easy_parle.png" alt="Logo" class="logo"> -->
-                <!-- <h1 class="text-2xl" style="color: #6366F1;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: x-large;"> EasyParle</h1> -->
-              </div>
-            <a href="./index.html" class="return-link"><button>Return to Easy Parle</button></a>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <header class="flex justify-between items-center bg-white shadow p-4 rounded-md">
+            <div class="flex items-center space-x-4">
+                <a href="./index.html"><img src="./Images/easy1.jpg" alt="Logo" class="h-12"></a>
+            </div>
+            <a href="./index.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600" style="background-color: #D97706;">Return to Easy Parle</a>
         </header>
-        <h1>AI Chatbot Demo for Dentist</h1>
-        <p style="color: red;padding: 15px; text-align: center;">NOTE : For your security, please do not enter personal data into the chatbot, as it will be reflected in the live Google sheet.</p>
-        <!-- <div class="content">
-            <div class="image-section">
-                <img src="./Dentist.jpg" alt="AI Dentist Interface">
+        
+        <h1 class="text-2xl font-bold text-center my-4">AI Chatbot Demo for Dentist</h1>
+        <p class="text-red-600 text-center p-4">NOTE: For your security, please do not enter personal data into the chatbot, as it will be reflected in the live Google sheet.</p>
+        
+        <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+            <div class="video-section">
+                <video controls class="rounded-lg w-full max-w-md" autoplay>
+                    <source src="./Images/WhatsApp Video 2025-03-20 at 6.07.37 PM.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="chatbot-section" id="chat_form">
                 <script src="https://app.easyparle.com/js/chat_form_plugin.js" data-bot-id="47196"></script>
-            </div> -->
-            <div class="content">
-                <div class="video-section">
-                    <video controls class="responsive-video" height="380px" width="250px" style="border-radius: 15px;" autoplay>
-                        <source src="./Images/WhatsApp Video 2025-03-20 at 6.07.37 PM.mp4" type="video/mp4">
-                        <!-- <source src="./Images/WhatsApp Video 2025-03-20 at 5.45.58 PM.mp4" type="video/mp4"> -->
-                    </video>
-                </div>
-                <div class="chatbot-section" id="chat_form">
-                    <script src="https://app.easyparle.com/js/chat_form_plugin.js" data-bot-id="47196"></script>
+            </div>
+        </div>
+        
+        <section class="data-video-section p-4 mt-8">
+            <div class="data-container max-w-6xl mx-auto w-full">
+                <h2 class="text-xl md:text-2xl font-semibold text-center">Live Google Sheet Data (Conversation reflect after a minute)</h2>
+                <p class="text-red-600 text-center text-sm md:text-base p-4 md:p-6 lg:p-8">NOTE: Data erase is anticipated within a week.</p>
+                <div class="overflow-x-auto w-full">
+                    <table id="data-table" class="min-w-full border-collapse border border-gray-300 text-sm md:text-base">
+                        <thead>
+                            <tr id="table-head" class="bg-gray-200 text-gray-700 border border-gray-300"></tr>
+                        </thead>
+                        <tbody id="table-body" class="divide-y divide-gray-200"></tbody>
+                    </table>
                 </div>
             </div>
-            
-        </div> <br><br><br>
-        
-        <section class="data-video-section">
-            <div class="data-container">
-                <h2>Live Google Sheet Data (Conversation reflect after a minute)</h2>
-                <p style="color: red;padding: 15px;text-align: center;">NOTE : Data erase is anticipated within a  week.</p>
-                <table id="data-table">
-                    <thead>
-                        <tr id="table-head"></tr>
-                    </thead>
-                    <tbody id="table-body"></tbody>
-                </table>
-            </div>
-            <!-- <p style="color: red;padding: 15px;padding-left: 2px;">NOTE : A data modification is anticipated within the next week.</p> -->
-        
-            <!-- <div class="video-container">
-                <iframe 
-                    src="./Images/WhatsApp Video 2025-03-20 at 5.45.58 PM.mp4" 
-                    frameborder="0" 
-                    allow="encrypted-media" 
-                    allowfullscreen>
-                </iframe>
-            </div> -->
         </section>
-        
-              
-</div>
+    </div>
+
 <script>
-     // Live Google Sheet Data
 const sheetUrl = "https://docs.google.com/spreadsheets/d/1tVE4AOPabJiTNsMJVWHOwu7xtyGXEFZR6vN0ZewPVdg/gviz/tq?tqx=out:json";
 
 async function fetchData() {
     const response = await fetch(sheetUrl);
     const text = await response.text();
-    const json = JSON.parse(text.substring(47, text.length - 2)); // Remove extra characters
+    const json = JSON.parse(text.substring(47, text.length - 2));
     const rows = json.table.rows;
 
     const tableHead = document.getElementById("table-head");
     const tableBody = document.getElementById("table-body");
 
-    tableHead.innerHTML = ""; 
+    tableHead.innerHTML = "";
     tableBody.innerHTML = "";
 
-    // Set table headers
-    tableHead.innerHTML = `<tr>${json.table.cols.map(col => `<th>${col.label}</th>`).join("")}</tr>`;
-
-    // Set table rows with formatted date
+    tableHead.innerHTML = `<tr>${json.table.cols.map(col => `<th class='p-2 border'>${col.label}</th>`).join("")}</tr>`;
+    
     rows.forEach(row => {
         const formattedRow = row.c.map(cell => {
             let cellValue = cell?.v || "";
-            
-            // Check if the cell value is a Date string like "Date(2025,2,26,7,16,8)"
             if (typeof cellValue === "string" && cellValue.startsWith("Date(")) {
-                // Extract the numbers from the Date string
-                const dateParts = cellValue.match(/\d+/g); // Extract all numbers
+                const dateParts = cellValue.match(/\d+/g);
                 if (dateParts && dateParts.length >= 3) {
                     const year = parseInt(dateParts[0]);
-                    const month = parseInt(dateParts[1]) + 1; // JavaScript months are 0-based, so add 1
+                    const month = parseInt(dateParts[1]) + 1;
                     const day = parseInt(dateParts[2]);
-                    // Format the date as DD/MM/YYYY
                     cellValue = `${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year}`;
                 }
             }
-            return `<td>${cellValue}</td>`;
+            return `<td class='p-2 border'>${cellValue}</td>`;
         }).join("");
         tableBody.innerHTML += `<tr>${formattedRow}</tr>`;
     });
 }
 
 fetchData();
-setInterval(fetchData, 5000); // Refresh every 5 seconds for live updates
+setInterval(fetchData, 5000);
 </script>
 </body>
 </html>
