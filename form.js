@@ -87,8 +87,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // ✅ Handle Different Actions
         if (actionType === "buy_plan") {
             let paymentLink = planType === "yearly"
-                ? "https://www.creem.io/test/payment/prod_5xB34or32CfK3lGbJDSVSM"
-                : "https://www.creem.io/test/payment/prod_1jyLYpYfWeAjQMt2UMHmJP";
+                ? "https://www.creem.io/payment/prod_4cmp7wIZgb1LkcMbxw08iK"
+                : "https://www.creem.io/payment/prod_4TZMJ48VaMflFVqjRH3llR";
 
             console.log("✅ Redirecting to payment:", paymentLink);
             setTimeout(() => {
